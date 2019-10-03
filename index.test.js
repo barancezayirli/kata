@@ -138,6 +138,9 @@ describe('Workflow - flow tests', () => {
     }, {
       name: 'report',
       payload: ['name']
+    }, {
+      name: 'rename',
+      payload: {from: 'age', to: 'foo'}
     }];
     const { ok, message, data, steps } = workflow(input, stepInput);
     const expectedData = [{ age: 30.00 }];
