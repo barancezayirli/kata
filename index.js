@@ -25,7 +25,7 @@ const workflow = (input, steps) =>  {
       output.ok = false;
       output.message = 'unknown step'
     } else {
-      output = { ...tasks[step.name](input, step.payload) };
+      Object.assign(output, tasks[step.name](input, step.payload));
       if (!output.ok) {
         break;
       }
